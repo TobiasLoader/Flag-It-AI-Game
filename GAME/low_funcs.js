@@ -40,8 +40,10 @@ function collision(block){
         if (human){
         	play=false;
         } else {
+/*
 	        Xcoor = startFlags[score].x;
 				  Ycoor = startFlags[score].y;
+*/
         }
         messageToDisplay.index = round(random(0,7));
         messageToDisplay.rotation = random(-10,10);

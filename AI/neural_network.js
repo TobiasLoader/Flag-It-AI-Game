@@ -74,8 +74,8 @@ function stimulus_setup(){
 		yDiff += radiiDiff[i]*sin(i * 360/sensors);
 	}
 	
-	xDiff = 6*(2*sigmoid(xDiff)-1);
-	yDiff = 6*(2*sigmoid(yDiff)-1);
+	xDiff = 4*(2*sigmoid(xDiff)-1);
+	yDiff = 4*(2*sigmoid(yDiff)-1);
 	
 // 	alert('X: ' + xDiff);
 // 	alert('Y: ' + yDiff);
@@ -211,7 +211,7 @@ function training(){
 		for (var j=0; j<init_weight_structure().length; j+=1){
 			for (var k = 0; k<init_weight_structure()[j].length; k+=1){
 // 				if (k!==round(nodesPerLayer[nodesPerLayer.length-1]/4) && k!==round(3*nodesPerLayer[nodesPerLayer.length-1]/4) && k!==round(nodesPerLayer[nodesPerLayer.length-1]) && k!==round(3*nodesPerLayer[nodesPerLayer.length-1]/2)){
-					P = 2*sigmoid(2*sigmoid(addToWeights[j][k]*pow(2,-stimulus_decay_rate*ai_cycles)/7)-1)-1;
+					P = 2*sigmoid(2*sigmoid(addToWeights[j][k]*pow(2,-stimulus_decay_rate*ai_cycles)/4)-1)-1;
 					if (P>0){
 						weights[j][k] = e_func(weights[j][k] + abs(1-weights[j][k])*P);
 					} else if (P<0){
