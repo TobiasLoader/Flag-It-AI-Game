@@ -1,8 +1,8 @@
-#Training-A-Reinforcement-Neural-Network
+Training-A-Reinforcement-Neural-Network
 
-Flag-It-AI-Game
+The aim for this project is to train my reinforcement neural network to plag Flag It, an arcade game I designed last year.
 
-This project is still definitely IN PROGRESS:
+This project is still IN PROGRESS:
 
 - I have written the game and reinforcement learning algorithm from scratch
-- However the AI currently starts of well (note there are biases towards flags) but soon learns bad habits and ceases to improve, instead only reinforcing undesired traits. (eg: moving towards bottom right or bottom left regardless of where the flags are).
+- However whilst the AI currently starts off well (note there are biases towards flags), it soon learns bad habits and ceases to improve, instead only reinforcing undesired traits. (eg: moving towards bottom right or bottom left regardless of where the flags are).
