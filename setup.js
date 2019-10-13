@@ -141,15 +141,6 @@ function setup() {
 	
 	frameRate(30);
 	
-	promptForHuman = prompt('Choose – Human OR AI:\n\nType one of  {H/A}: ');
-	if (promptForHuman[0]==='H' || promptForHuman[0]==='h'){
-		human = true;
-		alert('The HUMAN (you) is playing');
-	} else {
-		human = false;
-		alert('The AI is playing');
-	}
-	
 	w = window.innerWidth;
 	h = window.innerHeight;
 	canvas = createCanvas(w, h);
@@ -183,12 +174,6 @@ function setup() {
 	middleCheck = [0];
 	middleCheckAll = false;
 	play = false;
-	if (human){
-		lives = 3;
-	} else {
-		lives = 100;
-	}
-	
 	
 	transitionDown = 0;
 	transitioningSecond = false;

@@ -442,6 +442,21 @@ function mouseClicked(){
         clicked = scene;
     }
     buttonClicked = buttonHover;
+    if (buttonClicked==='GO'){
+	    promptForHuman = prompt('Choose to play as the Human OR watch the AI to play and learn.\n\nTo play as the human: Type H\nTo watch the AI to play: Type A or I ');
+		if (promptForHuman[0]==='H' || promptForHuman[0]==='h' || promptForHuman[0]==='I' || promptForHuman[0]==='i'){
+			human = true;
+			alert('The HUMAN (you) is playing');
+		} else {
+			human = false;
+			alert('The AI is playing');
+		}
+		if (human){
+			lives = 3;
+		} else {
+			lives = 20;
+		}
+    }
     if (scene==="HELP"){
         if (hoverDot&&!slide){
             hoveredDot = hoverDot;
