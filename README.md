@@ -1,6 +1,6 @@
 Training-A-Reinforcement-Neural-Network
 
-The aim for this project is to train my reinforcement neural network to plag Flag It, an arcade game I designed last year.
+The aim for this project is to train my reinforcement neural network to plag Flag Run, an arcade game I designed last year.
 
 This project is still IN PROGRESS:
 
