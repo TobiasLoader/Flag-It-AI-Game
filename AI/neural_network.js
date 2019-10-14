@@ -168,8 +168,8 @@ function training(){
 // 		alert(weights);
 //   }
 	if (Xcoor<0 || Xcoor>w || Ycoor<0 || Ycoor>h){
-    Xcoor = startFlags[score].x;
-    Ycoor = startFlags[score].y;
+	    Xcoor = startFlags[score].x;
+	    Ycoor = startFlags[score].y;
 	}  
   
   radar();

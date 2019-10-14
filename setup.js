@@ -98,6 +98,12 @@ var Speed;
 
 var flagBias;
 
+var firstSceneClicked;
+
+var f=['Quicksand','Playfair-Display'];
+
+var goTime;
+
 function sigmoid(x){
 	return 1 / (1 + exp(-x));
 }
@@ -139,6 +145,8 @@ function init_weight_structure(){
 
 function setup() {
 	
+	firstSceneClicked = false;
+	
 	frameRate(30);
 	
 	w = window.innerWidth;
@@ -153,14 +161,14 @@ function setup() {
 	
 	colours = {
 	    background : color(253, 253, 254),
-	    main : color(116, 185, 242),
-	    mainTrans : color(116, 185, 242,100),
-	    secondary : color(237, 128, 154)
+	    main : color(8, 84, 161),
+	    mainTrans : color(8, 84, 161,100),
+	    secondary : color(196, 51, 86)
 	};
 	
 	fonts = {
 	    title : "Trebuchet MS",   
-	    main : "Avenir Next"
+	    main : f[0]
 	};
 	
 	startMs = millis();
@@ -228,7 +236,7 @@ function setup() {
 	}
 	
 	dots = {
-    polygonDots : new exampleDots(w/2,2*h/3,9,7,4,5,3)
+    polygonDots : new exampleDots(w/2,h/2,9,7,4,5,3)
 	}
 	
 	initialiseBlocks();

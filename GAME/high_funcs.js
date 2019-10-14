@@ -77,33 +77,38 @@ function playerBig(){
 function loading(){
     fill(colours.main);
     dotsInPolygon(dots.polygonDots);
-    textFont(fonts.title,(w+h)*35/800);
-    textAlign(CENTER);
+    textFont(fonts.title,(w+h)*30/800);
+//     textAlign(CENTER);
+/*
     text("LOADING",w*193/400,h*125/400);
     textShadow("LOADING",w/2,h*125/400);
+*/
     fill(colours.main);
     if (s>1){
         transitionFirst("MENU");
     }
 }
 function menu(){
-    var startFlag = new Flag(w*60/400,h*36/400);
-    var middleFlag = new Flag(w*319/400,h*219/400);
-    var endFlag = new Flag(w*144/400,h*387/400);
+    var startFlag = new Flag(w*60/400,h*41/400);
+    var middleFlag = new Flag(w*214/400,h*223/400);
+    var endFlag = new Flag(w*355/400,h*364/400);
 
     score=0;
     fill(colours.main);
-    textFont(fonts.title,(w+h)*25/400);
-    text("FLAG IT ?",w/2,h*125/400);
-    textShadow("FLAG IT ?",w/2,h*125/400,3);
+    textFont(fonts.title,(w+h)*20/400);
+    text("FLAG RUN",w/2,h*135/400);
+    textShadow("FLAG RUN",w/2,h*135/400,3);
     
-    button("GO",w/2,3*h/4,h/4);
+    button("GO",w/2,260*h/400,h/6);
+/*
     button("HELP",w*9/40,h*27/40,h*75/400);
     button("THANKS",w*31/40,h*27/40,h*75/400);
+*/
     
     noFill();
     stroke(colours.main);
     arc(w*55/400,h*64/400,w*50/400,h*30/400,200,340);
+    arc(w*354/400,h*387/400,w*50/400,h*30/400,200,340);
     startFlag.drawStart(true,false);
     middleFlag.drawMiddle(true,false);
     endFlag.drawEnd(true,false);
@@ -133,8 +138,8 @@ function help(){
 function thanks(){
     fill(colours.main);
     textFont(fonts.title,(w+h)*25/400);
-    text("~ THANKS ~",w/2,h*118/400);
-    textShadow("~ THANKS ~",w/2,h*118/400,3);
+    text("~ AI INFO ~",w/2,h*118/400);
+    textShadow("~ AI INFO ~",w/2,h*118/400,3);
     
     button("⇠",h/10,h/10,h/10,h*19/400);
     

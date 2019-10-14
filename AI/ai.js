@@ -4,7 +4,9 @@ function AI(){
 		if (human){
 			radar();
 		} else {
-			training();
+			if (millis()-goTime>3000){
+				training();
+			}
 		}
 	}
 }

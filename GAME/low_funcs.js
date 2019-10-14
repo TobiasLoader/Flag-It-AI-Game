@@ -55,16 +55,18 @@ function collision(block){
 
 function transition(){
     noStroke();
-    fill(colours.main);
+    fill(red(colours.main),green(colours.main),blue(colours.main),240);
     rectMode(CORNER);
     rect(0,0,w,transitionDown);
     stroke(colours.background);
     strokeWeight(2);
+/*
     for (var y=20; y<h; y+=80){
         for(var x=10;x<w; x+=40){
             line(x,transitionDown-y,x+20,transitionDown-y);
         }
     }
+*/
     strokeWeight(1);
 }
 function transitionFirst(transitionTo){
@@ -102,12 +104,14 @@ function textShadow(TEXT,x,y,diff){
 }
 
 function cornerLines(){
+/*
     stroke(colours.main);
     strokeWeight(1);
     for (var i=1;i<=2;i+=1){line(0,h/(i*16),w/(i*16),0);}
     for (var i=1;i<=2;i+=1){line(w,h/(i*16),w-w/(i*16),0);}
     for (var i=1;i<=2;i+=1){line(w,h-h/(i*16),w-w/(i*16),h);}
     for (var i=1;i<=2;i+=1){line(0,h-h/(i*16),w/(i*16),h);}
+*/
 }
 function backgroundPattern(){
     background(colours.background);
@@ -438,38 +442,44 @@ window.onresize = function() {
 }
 
 function mouseClicked(){
-    if (transitionDown<=0){
-        clicked = scene;
-    }
-    buttonClicked = buttonHover;
-    if (buttonClicked==='GO'){
-	    promptForHuman = prompt('Choose to play as the Human OR watch the AI to play and learn.\n\nTo play as the human: Type H\nTo watch the AI to play: Type A or I ');
-		if (promptForHuman[0]==='H' || promptForHuman[0]==='h' || promptForHuman[0]==='I' || promptForHuman[0]==='i'){
-			human = true;
-			alert('The HUMAN (you) is playing');
-		} else {
-			human = false;
-			alert('The AI is playing');
-		}
-		if (human){
-			lives = 3;
-		} else {
-			lives = 20;
-		}
-    }
-    if (scene==="HELP"){
-        if (hoverDot&&!slide){
-            hoveredDot = hoverDot;
-            slide = true;
-        }    
-    }
-    if (scene==="THANKS" && !buttonHover){
-        if (speechScene<6){
-            speechScene+=1;
-        } else {
-            speechScene=1;
-        }
-    }
+	if (firstSceneClicked){
+	    if (transitionDown<=0){
+	        clicked = scene;
+	    }
+	    buttonClicked = buttonHover;
+	    if (buttonClicked==='GO'){
+		    promptForHuman = prompt('You can now choose to either play as a Human, or to watch as the AI plays.\n\nTap the \'H\' key to play as a HUMAN\nTap any other key to watch the AI play');
+			if (promptForHuman[0]==='H' || promptForHuman[0]==='h'){
+				human = true;
+				alert('The HUMAN (you) will play. To start, hover over the green flag (with the white arrow) at the top of the screen. Tip: The start and end flags are safe zones, so even if you have not yet visited every white flag, you can still return to the Start or End flag where you will be safe from incoming objects.');
+			} else {
+				human = false;
+				alert('The AI will play.');
+			}
+			if (human){
+				lives = 3;
+			} else {
+				lives = 20;
+			}
+			goTime = millis();
+	    }
+	    if (scene==="HELP"){
+	        if (hoverDot&&!slide){
+	            hoveredDot = hoverDot;
+	            slide = true;
+	        }    
+	    }
+	    if (scene==="THANKS" && !buttonHover){
+	        if (speechScene<6){
+	            speechScene+=1;
+	        } else {
+	            speechScene=1;
+	        }
+	    }
+	}
+	if (mouseX>(window.innerWidth/2 - 125) && mouseX<(window.innerWidth/2+125) && mouseY>17*window.innerHeight/20-20 && mouseY<17*window.innerHeight/20+20){
+		firstSceneClicked = true;
+	}
 }
 
 function mouseOut(){
