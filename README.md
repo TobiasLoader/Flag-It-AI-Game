@@ -1,4 +1,4 @@
-# Training a Reinforcement Neural Network
+# Reinforcement Neural Network
 
 This project is a continuation of my supervised neural network.
 
