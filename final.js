@@ -5,7 +5,7 @@ function firstScene(){
 	fill(0);
 	noStroke();
 	textAlign(CENTER,CENTER);
-	text('Training a Reinforcement Neural Network',window.innerWidth/2,6*window.innerHeight/40)
+	text('Reinforcement Neural Network',window.innerWidth/2,6*window.innerHeight/40)
 	var welcomeWidth = textWidth('Reinforcement Neural Network');
 	textAlign(LEFT,CENTER);
 	textSize((window.innerWidth+window.innerHeight)/130);
